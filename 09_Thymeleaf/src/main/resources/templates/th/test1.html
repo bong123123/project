@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>TEST1 PAGE</h1>
+    NAME : <span th:text="${name}"></span><br>
+    MEMO : <span th:text="${memo}"></span><br>
+    MEMO.id : <span th:text="${memo.id}"></span><br>
+    MEMO.text : <span th:text="${memo.text}"></span><br>
+    MEMO.writer : <span th:text="${memo.writer}"></span><br>
+    <hr />
+    <!-- th:block 실제 뷰에서는 안보임 -->
+    <!-- thymeleaf의 if 예제-->
+    <th:block th:if="${isAuth}">
+        <div> 로그인 상태입니다.</div>
+    </th:block>
+    <th:block th:unless="${isAuth}">
+        <div> 로그아웃 상태입니다.</div>
+    </th:block>
+    <hr>
+    <!-- thymeleaf의 반복문 예제-->
+    <th:block>
+        <div th:each="dto:${list}">   <!-- 리스트 갯수만듬 div태그 만들어짐 (dto) -->
+            <span th:text="${dto.id}"></span>   <!-- 리스트 내의 요소들을 dto.으로 꺼냄 -->
+            <span th:text="${dto.text}"></span>
+            <span th:text="${dto.writer}"></span>
+        </div>
+    </th:block>
+    <hr>
+    <a th:href="@{/th/param1(id=${memo.id},text='aaa',writer='bbb')}">이동하기</a>
+    <br>
+    <a th:href="@{th/param2/{id}/{text}/{writer}(id=${memo.id},text='aaa',writer='bbb')}">이동하기2</a>
+
+    <script th:inLine="javascript">
+        // Model Attr String Data
+        const v1 = [[ ${name} ]]
+        console.log('v1',v1);
+
+        const v2 = [[ ${memo} ]];
+        console.log('v2',v2);
+
+        const v3 = [[ ${list} ]];
+        console.log('v3',v3);
+
+        const v4 = [[ ${bookList} ]];
+        console.log('v4',v4);
+
+        const v5 = [[ ${lendList}]]
+        console.log('v5',v5);
+
+    </script>
+
+
+</body>
+</html>
