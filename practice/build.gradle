@@ -24,28 +24,35 @@ repositories {
 }
 
 dependencies {
-	//	THYMELEAF
+//	THYMELEAF
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	//	WEB
+//	WEB
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//	LOMBOK
+//	LOMBOK
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	//	ETC
+//  ETC
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	//	REST
+
+//  jackson-core
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.18.1'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.1'
 	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.18.1'
 	implementation group: 'com.google.code.gson', name: 'gson', version: '2.11.0'
+
+//  json-simple
 	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
-	//MAIL
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
+//	JDBC
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
-	//GOOGLE CALENDAR
-	implementation 'com.google.apis:google-api-services-calendar:v3-rev20241101-2.0.0'
+//	JSTL
+	implementation 'jakarta.servlet:jakarta.servlet-api' //스프링부트 3.0 이상
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
+
 
 }
 

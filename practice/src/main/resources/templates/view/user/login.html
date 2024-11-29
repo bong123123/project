@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* 전체 화면을 16:9 비율로 설정 */
+        body, html {
+             height: 100%;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #f4f4f4;
+<!--              aspect-ratio: 16 / 9;-->
+        }
+
+        /* 섹션 */
+        main {
+          width: 400px;
+          max-width: 400px;
+          padding: 20px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 폼 스타일 */
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        input {
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+
+        button {
+          padding: 10px;
+          background-color: #4CAF50;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between; /* 양 끝 정렬 */
+            align-items: center;
+            width: 100%; /* 전체 폭을 채우기 */
+            margin-top: 10px;
+        }
+
+        /* 왼쪽에 회원가입 */
+        .left {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%; /* 남은 공간을 모두 차지 */
+        }
+
+        /* 오른쪽에 아이디 찾기와 비밀번호 찾기 */
+        .right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 5px;
+            min-width: 180px; /* 최소 너비를 설정해서 버튼이 한 줄에 배치되게 함 */
+            text-align: center;
+        }
+
+        .links a {
+          color: #007bff;
+          font-size: 12px;
+          text-decoration: none;
+          margin: 0 5px;
+        }
+
+        .links a:hover {
+          text-decoration: underline;
+        }
+
+        // 다른방법으로 로그인 버튼
+        .otherway {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .otherway button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 14px;
+          color: black;
+          cursor: pointer;
+          flex: 1; /* 균등한 너비 */
+        }
+
+        .otherway button img {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+        }
+
+        .otherway button:hover {
+          background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+        <h1> THIS IS LOGIN PAGE </h1>
+        <form>
+            <input type="text" id="id" name="id" placeholder="아이디">
+            <input type="password" id="password" name="password" placeholder="비밀번호">
+
+            <div class="links">
+                <div class="left">
+                    <a href="signup">회원가입</a>
+                </div>
+                <div class="right">
+                    <a href="findid">아이디 찾기</a>
+                    <a href="findpw">비밀번호 찾기</a>
+                </div>
+            </div>
+
+            <button type="submit">로그인</button>
+
+            <div class="otherway">
+                <button onclick="window.location.href='https://www.naver.com';">
+                    <img src="/image/otherway_login_logo/naver_logo_icon.png" alt="Naver Logo">
+                    Naver 계정으로 로그인
+                </button>
+                <button onclick="window.location.href='https://www.kakao.com';">
+<!--                <a href="https://kr.freepik.com/icons/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1">Pixel perfect 제작 아이콘</a>-->
+                    <img src="/image/otherway_login_logo/kakao_logo_icon.png" alt="Kakao Logo">
+                    Kakao 계정으로 로그인
+                </button>
+                <button onclick="window.location.href='https://www.google.com';">
+                    <img src="/image/otherway_login_logo/google_logo_icon.png" alt="Google Logo">
+                    Google 계정으로 로그인
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+</body>
+</html>
